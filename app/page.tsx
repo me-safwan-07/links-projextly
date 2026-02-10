@@ -9,48 +9,86 @@ import PrimaryLinks from "./components/primary-links";
 
 const iconClass = "text-zinc-300 text-lg";
 
+
+const withUTM = (url: string, content: string) => {
+  const utmParams = new URLSearchParams({
+    utm_source: "links_page",
+    utm_medium: "link",
+    utm_campaign: "projextly_links",
+    utm_content: content,
+  });
+
+  return `${url}?${utmParams.toString()}`;
+};
+
+
 const links = [
   {
     icon: <FiLayers className={iconClass} />,
     title: "Projects",
-    url: "https://www.projextly.com/projects",
+    url: withUTM(
+      "https://www.projextly.com/projects",
+      "projects"
+    ),
   },
   {
     icon: <FiBook className={iconClass} />,
     title: "Blog",
-    url: "https://www.projextly.com/blog",
+    url: withUTM(
+      "https://www.projextly.com/blog",
+      "blog"
+    ),
   },
   {
     icon: <FiBriefcase className={iconClass} />,
     title: "Services",
-    url: "https://www.projextly.com/services",
+    url: withUTM(
+      "https://www.projextly.com/services",
+      "services"
+    ),
   },
   {
     icon: <FiSettings className={iconClass} />,
     title: "Customize Projects",
-    url: "https://www.projextly.com/customize",
+    url: withUTM(
+      "https://www.projextly.com/customize",
+      "customize_projects"
+    ),
   },
   {
     icon: <FiMail className={iconClass} />,
     title: "Contact Us",
-    url: "https://www.projextly.com/contact",
+    url: withUTM(
+      "https://www.projextly.com/contact",
+      "contact"
+    ),
   },
   {
     icon: <SiInstagram className={iconClass} />,
     title: "Instagram",
-    url: "https://instagram.com/projextly",
+    url: withUTM(
+      "https://instagram.com/projextly",
+      "instagram"
+    ),
   },
   {
     icon: <SiGithub className={iconClass} />,
     title: "GitHub",
-    url: "https://github.com/projextly",
+    url: withUTM(
+      "https://github.com/projextly",
+      "github"
+    ),
   },
   {
     icon: <SiX className={iconClass} />,
     title: "X",
-    url: "https://x.com/projextly",
+    url: withUTM(
+      "https://x.com/projextly",
+      "x"
+    ),
   },
 ];
+
 
 
 const HomePage = () => {
